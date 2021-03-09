@@ -17,7 +17,7 @@ useEffect(() =>{
         // console.log(data.leagues[0])
         setTeamsDetails(data.leagues[0])
     })
-},[])
+},[id])
 console.log(teamDetails);
     return (
         <div>
