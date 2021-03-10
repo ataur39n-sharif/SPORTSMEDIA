@@ -1,0 +1,12 @@
+.img-container{
+    background-image: url(../../image/homepage.jpg);
+    /* height: 400px ; */
+    border-radius: 5px;
+    background-repeat: no-repeat;
+    background-positions: center ;
+    background-size: cover;
+}
+.abc{
+    color: white;
+    padding: 150px 0px;
+}
