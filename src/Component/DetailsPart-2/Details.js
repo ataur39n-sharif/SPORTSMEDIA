@@ -1,22 +1,36 @@
 import React from 'react';
+import './Detail.css'
+import Male from '../../Photo/male.png'
+import Female from '../../Photo/female.png'
+import { Beenhere, Facebook, Flag, SportsSoccer, Twitter, Wc, YouTube } from '@material-ui/icons';
+
 
 const Details = (props) => {
-    const {dateFirstEvent , strCountry , strSport , strGender, strFanart2,strDescriptionEN } = props.teamDetails
+    console.log(props.teamDetails)
+    const { dateFirstEvent, strCountry, strSport, strGender, strDescriptionEN, strFacebook, strTwitter, strYouTube } = props.teamDetails
     return (
-        <div className="container justify-content-center">
-            <div className="row mt-5 bg-primary text-light">
-                <div className="col-md-6 text-center">
-                    <p>Founded : {dateFirstEvent} </p>
-                    <p>Country : {strCountry} </p>
-                    <p>Sports type : {strSport} </p>
-                    <p>Gender : {strGender}</p>
+        <div className="bg-light">
+            <div className="row mt-5 bg-dark text-light rounded p-3 custom">
+                <div className="col-md-6 d-flex justify-content-center align-items-center">
+                    <div >
+                        <p><Beenhere /> Founded : {dateFirstEvent} </p>
+                        <p><Flag /> Country : {strCountry} </p>
+                        <p><SportsSoccer /> Sports type : {strSport} </p>
+                        <p className='mb-0'><Wc /> Gender : {strGender}</p>
+                    </div>
                 </div>
-                <div className='col-md-6'>
-                    <img style={{width:'400px',  height:'250px'}}  src={strFanart2} alt="groupPhoto"/>
+                <div className='col-md-6 d-flex justify-content-center'>
+                    <img className='rounded' style={{ width: '315px', height: '200px' }} src={strGender==='Female'? Female : Male} alt="groupPhoto" />
                 </div>
             </div>
-            <div className='mt-5'>
-                <p>{strDescriptionEN}</p>
+            <div className='mt-5 bg-info p-5 rounded'>
+                <h1>Details : </h1>
+                <p className='font-italic'>{strDescriptionEN}</p>
+            </div>
+            <div className='d-flex justify-content-center'>
+                <a className='m-2 p-2' href={`https://${strFacebook}`}><Facebook /> </a>
+                <a className='m-2 p-2' href={`https://${strTwitter}`}><Twitter /> </a>
+                <a className='m-2 p-2' href={`https://${strYouTube}`}><YouTube /> </a>
             </div>
         </div>
     );

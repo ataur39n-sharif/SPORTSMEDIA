@@ -7,7 +7,7 @@ const TeamDetails = () => {
     const {id} = useParams()
     const [teamDetails , setTeamsDetails] = useState({})
 
-    const {idLeague, strFanart1} = teamDetails
+    const {idLeague, strBanner, strFanart4, strBadge} = teamDetails
 
 useEffect(() =>{
     const url = `https://www.thesportsdb.com/api/v1/json/1/lookupleague.php?id=${id}`
@@ -18,11 +18,16 @@ useEffect(() =>{
         setTeamsDetails(data.leagues[0])
     })
 },[id])
+
+const headerStyle = {
+    background : ` linear-gradient(#0005, #0005),url("${strBanner}") no-repeat center center / cover`,
+  
+}
 console.log(teamDetails);
     return (
-        <div>
-            <div className="container justify-content-center">
-                <img style={{ height:'500px', width:'100%'}} src={strFanart1} alt="teamdetails"/>
+        <div className="container">
+            <div className='d-flex justify-content-center' style={headerStyle}>
+                <img style={{height: '150px' , width: '150px' , backgroundColor: 'transparent'}} className="p-3" src={strBadge} alt="teamdetails"/>
             </div>
             <div>
                 {
