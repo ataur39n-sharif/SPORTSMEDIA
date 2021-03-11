@@ -7,12 +7,13 @@ import { Beenhere, Facebook, Flag, SportsSoccer, Twitter, Wc, YouTube } from '@m
 
 const Details = (props) => {
     console.log(props.teamDetails)
-    const { dateFirstEvent, strCountry, strSport, strGender, strDescriptionEN, strFacebook, strTwitter, strYouTube } = props.teamDetails
+    const {strLeague, dateFirstEvent, strCountry, strSport, strGender, strDescriptionEN, strFacebook, strTwitter, strYouTube } = props.teamDetails
     return (
         <div className="bg-light">
             <div className="row mt-5 bg-dark text-light rounded p-3 custom">
                 <div className="col-md-6 d-flex justify-content-center align-items-center">
                     <div >
+                        <h1>{strLeague}</h1>
                         <p><Beenhere /> Founded : {dateFirstEvent} </p>
                         <p><Flag /> Country : {strCountry} </p>
                         <p><SportsSoccer /> Sports type : {strSport} </p>

@@ -21,7 +21,6 @@ useEffect(() =>{
 
 const headerStyle = {
     background : ` linear-gradient(#0005, #0005),url("${strBanner}") no-repeat center center / cover`,
-  
 }
 console.log(teamDetails);
     return (
